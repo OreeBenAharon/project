@@ -1,0 +1,165 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100vh; 
+    width: 100vw; 
+}
+
+.header{
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.login-logout{
+    /* padding: 10px; */
+    margin: 40px;
+}
+
+.contact{
+    /* padding: 10px; */
+    margin: 0 20px 0 0;
+}
+.login-div{
+    padding: 5px;
+    margin: 10px;
+}
+
+.flex-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+/* registration */
+
+.reg-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-form-input{
+    width:200px;
+}
+
+.mat-hint{
+    color: red;
+}
+
+/* cart */
+
+.drawer-container{
+    width: 100vw;
+    height: 90vh;
+}
+
+/* .store-cart{
+    width: 4000px
+} */
+/* .store-search-icons{
+    border: ;
+} */
+
+td,th{
+    padding: 13px !important;
+    text-align: center !important;
+
+  }
+
+.store-bar-container{
+    /* border: 2px solid purple; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.store-form{
+    width: 15%
+}
+
+/* .store-categs{
+     width: 85% 
+} */
+
+.store-list-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: start; */
+}
+ 
+/* item */
+
+.store-item{
+    margin: 15px;
+    padding:10px;
+}
+
+.store-popup-btns{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    justify-content: start;
+}
+
+.item-popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.item-popup > * {
+    padding: 5px;
+}
+
+.popup-msg {
+    text-align: center;
+}
+.store-header{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    justify-content: center;
+}
+
+.order-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.highlight {
+    background: rgb(223, 255, 80);
+   }
+
+.admin-list-container{
+display: flex;
+flex-direction: row;
+justify-content: center;
+flex-wrap: wrap;
+
+/* justify-content: start; */
+}
+
+.mat-radio-button {
+    margin: 0 12px;
+  }

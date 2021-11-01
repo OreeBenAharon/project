@@ -1,0 +1,100 @@
+<div class="admin-editbar-header">
+    <button (click)="_ad.toggleEditBar()">Hide Edit Bar</button>
+    <button (click)="_ad.startAdding()">Add New Item </button>
+
+</div> 
+    <div class="admin-editbar-container ">
+        <mat-card *ngIf="_ad.mode ==='edit'">
+            <div class="edit-item">
+                <mat-card-title>Edit Product #{{_ad.productEditing.id}}: {{_ad.productEditing.title}}</mat-card-title>
+                <br>
+                <form [formGroup]="_ad.editItemForm" (ngSubmit)="_ad.adminEdit(_ad.productEditing.id,
+                                                                            _ad.editItemForm.controls.titleEditCtrl.value,       
+                                                                            _ad.editItemForm.controls.typeEditCtrl.value,
+                                                                            _ad.editItemForm.controls.priceEditCtrl.value,
+                                                                            _ad.editItemForm.controls.picEditCtrl.value)">
+                
+                    <mat-form-field appearance="fill" >
+                        <p>
+                        <mat-label>Product Title</mat-label>
+                        <input matInput [formControl]="_ad.titleEditCtrl" type="text" value={{_ad.productEditing.title}} required>
+                        </p>
+                    </mat-form-field>
+                
+                    <p>
+                        <label>Type: </label>
+                    <br>
+                    <mat-radio-group [formControl]="_ad.typeEditCtrl" value={{_ad.productEditing.categ_id}} required>
+                        <mat-radio-button [checked]="_ad.productEditing.categ_id === 1 ? true : false" value=1>Bread</mat-radio-button>
+                        <mat-radio-button [checked]="_ad.productEditing.categ_id === 2 ? true : false" value=2>Challah</mat-radio-button>
+                        <mat-radio-button [checked]="_ad.productEditing.categ_id === 3 ? true : false" value=3>Special</mat-radio-button>
+                    </mat-radio-group>
+                    </p>
+                   
+ 
+                <p>
+                    <mat-form-field appearance="fill" >
+                        <mat-label>Product Price</mat-label>
+                        <input matInput [formControl]="_ad.priceEditCtrl" value={{_ad.productEditing.price}} type="number" required>
+                    </mat-form-field>
+                </p>
+    
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Product Picture URL</mat-label>
+                        <input matInput [formControl]="_ad.picEditCtrl" type="text" value={{_ad.productEditing.pic}} required>
+                    </mat-form-field>  
+                </p>
+
+                <button type="submit">Update Item</button>
+                </form>
+            </div>
+        </mat-card>
+        
+        <mat-card *ngIf="_ad.mode ==='add'">
+            <div class="add-item">
+                <mat-card-title>Add New Product</mat-card-title>
+                <br>
+                <form [formGroup]="_ad.addItemForm" (ngSubmit)="_ad.adminAdd(
+                                                                            _ad.addItemForm.controls.titleAddCtrl.value,       
+                                                                            _ad.addItemForm.controls.typeAddCtrl.value,
+                                                                            _ad.addItemForm.controls.priceAddCtrl.value,
+                                                                            _ad.addItemForm.controls.picAddCtrl.value)">
+                    <mat-form-field appearance="fill" >
+                        <p>
+                        <mat-label>Product Title</mat-label>
+                        <input matInput [formControl]="_ad.titleAddCtrl" type="text"  required>
+                        </p>
+                    </mat-form-field>
+                
+                    <p>
+                        <label>Type: </label>
+                    <br>
+                    <mat-radio-group [formControl]="_ad.typeAddCtrl"  required>
+                        <mat-radio-button value=1>Bread</mat-radio-button>
+                        <mat-radio-button value=2>Challah</mat-radio-button>
+                        <mat-radio-button value=3>Special</mat-radio-button>
+                    </mat-radio-group>
+                    </p>
+                   
+ 
+                <p>
+                    <mat-form-field appearance="fill" >
+                        <mat-label>Product Price</mat-label>
+                        <input matInput [formControl]="_ad.priceAddCtrl" type="number" required>
+                    </mat-form-field>
+                </p>
+    
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Product Picture URL</mat-label>
+                        <input matInput [formControl]="_ad.picAddCtrl" type="text" required>
+                    </mat-form-field>  
+                </p>
+
+                <button type="submit">Add Item</button>
+                </form>
+            </div>
+        </mat-card>
+
+    </div>

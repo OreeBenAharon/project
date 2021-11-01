@@ -1,0 +1,14 @@
+<div class="admin-main">
+    <mat-drawer-container class="drawer-container"  width="500">
+        <mat-drawer #drawer class="drawer" mode="side">        
+            <div class="drawer-content" *ngIf="showFiller">
+                <app-admin-editbar ></app-admin-editbar>
+            </div> 
+        </mat-drawer>
+            <div class="admin-main-container">
+                <app-admin-list [showFiller]="showFiller"></app-admin-list>
+            </div>
+            
+    </mat-drawer-container>
+
+</div>

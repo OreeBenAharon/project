@@ -1,0 +1,13 @@
+<div class="recieption-popup" style="display:flex;
+                               flex-direction:column;
+                               justify-content:center">
+    <h1 mat-dialog-title> Order Successfully Added!</h1>
+    <div mat-dialog-content>
+        <p class="popup-msg">Download Your Invoice Here</p>
+    </div>
+    <div class="store-popup-btns" mat-dialog-actions>
+    <button mat-button cdkFocusInitial (click)="download()">Download</button>
+    <button mat-button cdkFocusInitial (click)="back()">Back to Store</button>
+    </div>
+</div>
+

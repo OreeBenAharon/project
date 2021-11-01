@@ -1,0 +1,61 @@
+<div class="store-cart">
+    <!-- <p *ngIf="_d.user.total > 0">Your Cart:</p>
+    <p *ngIf="_d.user.total === 0">Your Cart Is Empty</p> -->
+    <div [hidden]="_d.cart.length === 0">
+      <table #tab mat-table [dataSource]="_d.cart" class="mat-elevation-z8 demo-table" >
+    <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table"> -->
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th class="" mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-mini-fab color="warn" aria-label="Remove from cart" (click)="_sd.delete(element.product_id)">
+                <mat-icon>delete_outline</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+      
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> Title </th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+      
+        <!-- Amount Column -->
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef> Amount </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button aria-label="add amount" (click)="_sd.changeAmount(element.product_id,1)">
+              <mat-icon>expand_less</mat-icon>
+            </button>
+            {{element.amount}} 
+            <button mat-icon-button  aria-label="reduce amount" (click)="_sd.changeAmount(element.product_id,-1)">
+              <mat-icon>expand_more</mat-icon>
+            </button>
+            </td>
+        </ng-container>
+      
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <br>
+    <br>
+    <div class="cart-footer">
+      
+      <p> {{_d.cart.length > 0 ? "TOTAL:"+_d.user.total+"₪" : "Your Cart Is Empty"}} </p> 
+      <button mat-mini-fab color="warn" aria-label="Remove from cart" (click)="_sd.empty()">
+        Empty Cart
+      </button>
+      <button mat-mini-fab color="warn" aria-label="Remove from cart" *ngIf="_d.cart.length > 0" (click)="_sd.gotoCheckout()">
+        Checkout
+      </button>
+
+    </div>
+    
+</div>

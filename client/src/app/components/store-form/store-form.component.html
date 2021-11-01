@@ -1,0 +1,15 @@
+<div class="store-form">
+    <mat-form-field appearance="legacy" class="example-form-field" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput type="text" 
+        [(ngModel)]="value"
+        >
+        <button class="store-search-icons" color="primary" *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="_sd.loadProducts()">
+            <mat-icon>close</mat-icon>
+          </button>
+        <button class="store-search-icons" mat-icon-button color="primary" matSuffix mat-icon-button aria-label="" (click)="_sd.searchByName(value)">
+          <mat-icon>search</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+

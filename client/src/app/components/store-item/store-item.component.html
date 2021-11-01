@@ -1,0 +1,20 @@
+<div class="store-item">
+    <mat-card class="item-card">
+        <mat-card-header>
+          <div mat-card-avatar class="header-image">
+          </div>
+          <mat-card-title>{{item.title}}</mat-card-title>
+          <mat-card-subtitle>{{item.price}}₪</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{item.pic}} alt="Photo of {{item.title}}" width=30% height=30%>
+        <mat-card-content>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="openDialog()">
+              <mat-icon>add_shopping_cart</mat-icon> Add item
+            </button>
+
+        </mat-card-actions>
+      </mat-card>
+
+</div>

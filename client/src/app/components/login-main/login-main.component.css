@@ -1,0 +1,6 @@
+.login-main{
+    display: flex;
+    justify-content: space-between;
+    /* border: 2 px solid black; */
+}
+

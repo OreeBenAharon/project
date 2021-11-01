@@ -1,0 +1,17 @@
+<div class="store-item">
+    <mat-card class="item-card" (click)="_ad.startEditing(item.id)">
+        <mat-card-header >
+          <div mat-card-avatar class="header-image" >
+            
+          </div>
+          <mat-card-title>{{item.title}}</mat-card-title>
+          <mat-card-subtitle>{{item.price}}₪</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{item.pic}} alt="Photo of {{item.title}}" width=30% height=30%>
+        <mat-card-actions>
+
+
+        </mat-card-actions>
+      </mat-card>
+
+</div>

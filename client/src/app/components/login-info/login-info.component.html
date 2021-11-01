@@ -1,0 +1,31 @@
+<div class="login-info login-div">
+    <div class="userdata" >
+        <p *ngIf="_d.user.status === 2">Your Last Cart:</p>
+        <p *ngIf="_d.user.status === 1">Your Last Order:</p>
+        <div *ngIf="_d.user.status >= 0 && _d.user.status < 3">
+          <table #maintab mat-table [dataSource]="_d.dataSource" class="mat-elevation-z8 demo-table">
+            <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+              <th mat-header-cell *matHeaderCellDef>
+                {{column.header}}
+              </th>
+              <td mat-cell *matCellDef="let row">
+                {{column.cell(row)}}
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+        
+        <p *ngIf="_d.user.status === 2">{{_d.user.total+"₪ at Total"}}</p>
+        <p *ngIf="_d.user.status === 2">{{"Created at "+_d.cartData.created.replace("T"," ").slice(0,19)}}</p>
+   
+        <p *ngIf="_d.user.status === 1">{{ _d.lastOrder.total+"₪ at Total"}}</p>
+        <p *ngIf="_d.user.status === 1">{{"Ordered at " + _d.lastOrder.ordered_at.replace("T"," ").slice(0,19)}}</p>
+        
+        <p *ngIf="_d.user.status === 0">"Welcome to You First Shopping!"</p>
+        
+    </div>
+
+</div>

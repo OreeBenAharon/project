@@ -1,0 +1,5 @@
+.login-info{
+    display: flex;
+    justify-content: right;
+    border: 2 px black solid;
+}

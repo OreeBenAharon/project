@@ -1,0 +1,96 @@
+<div class="order-form">
+    <form
+    class="form"
+    *ngIf="orderFormGroup"
+    [formGroup]="orderFormGroup"
+    (ngSubmit)="createOrder()">
+    
+    <p>
+        <mat-form-field class="order-form-input" appearance="fill">
+            <mat-label>City:</mat-label>
+            <select
+                matNativeControl
+                formControlName="cityCtrl"
+                (change)="_od.city = orderFormGroup.controls.cityCtrl.value"
+                (dblclick)="setDetails(1)">
+                <option value="Tel Aviv">Tel Aviv</option>
+                <option value="Jerusalem">Jerusalem</option>
+                <option value="Be'er Sheva">Be'er Sheva</option>
+                <option value="Haifa">Haifa</option>
+                <option value="Rishon Le'Zion">Rishon Le'Zion</option>
+                <option value="Rehovot">Rehovot</option>
+                <option value="Tveria">Tveria</option>
+                <option value="Netanya">Netanya</option>
+                <option value="Ramat Gan">Ramat Gan</option>
+                <option value="Petah Tikva">Petah Tikva</option>
+            </select>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="fill" (dblclick)="_od.getUserDetails(2)">
+            <mat-label>Please fill your street address:</mat-label>
+            <input 
+                matInput
+                type="text"
+                palceholder="Street"
+                formControlName="streetCtrl"
+                (change)="_od.street = orderFormGroup.controls.streetCtrl.value"
+                (dblclick)="setDetails(2)" >
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Pick a shipping date</mat-label>
+            <input 
+                matInput
+                #dateC
+                [matDatepicker]="picker"
+                formControlName="dateCtrl"
+                invalid=!_od.dateOK 
+                (dateInput)="_od.validateDate($event)"
+                (dateChange)="_od.validateDate($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <p [ngClass]="{'order-msg-ok' : _od.dateOK &&
+                                        orderFormGroup.controls.dateCtrl.touched &&
+                                        orderFormGroup.controls.dateCtrl.dirty,
+                       'order-msg-notok' : !_od.dateOK &&
+                                            orderFormGroup.controls.dateCtrl.touched &&
+                                            orderFormGroup.controls.dateCtrl.dirty}" >
+            {{_od.dateOK && orderFormGroup.controls.dateCtrl.touched && orderFormGroup.controls.dateCtrl.dirty ? "Date available." : ""}}
+            {{!_od.dateOK && orderFormGroup.controls.dateCtrl.touched && orderFormGroup.controls.dateCtrl.dirty? "Date unavailable. Please choose another date." : ""}}
+        </p>
+    
+    <p>
+        <mat-form-field appearance="fill" >
+            <mat-label>Please fill your credit card number:</mat-label>
+            <input 
+                matInput
+                #cardC
+                type="number"
+                invalid=!_od.cardOK
+                (change)="_od.validateCard(orderFormGroup.controls.cardCtrl.value)"
+                formControlName="cardCtrl">
+        </mat-form-field>
+        <p [ngClass]="{'order-msg-ok' : _od.cardOK &&
+                                        orderFormGroup.controls.cardCtrl.touched &&
+                                        orderFormGroup.controls.cardCtrl.dirty,
+                        'order-msg-notok' : !_od.cardOK &&
+                                            orderFormGroup.controls.cardCtrl.touched &&
+                                            orderFormGroup.controls.cardCtrl.dirty}" >
+            {{_od.cardOK && orderFormGroup.controls.cardCtrl.touched && orderFormGroup.controls.cardCtrl.dirty ? "Credit card valid." : ""}}
+            {{!_od.cardOK && orderFormGroup.controls.cardCtrl.touched && orderFormGroup.controls.cardCtrl.dirty? "Credit card invalid. Please try again." : ""}}
+        </p>
+    
+    <p>
+        <input 
+            class="submit-btn"
+            type="submit"
+            value="Order"
+            [disabled]="!orderFormGroup.controls.cityCtrl.valid || !orderFormGroup.controls.streetCtrl.valid || !_od.dateOK || !_od.cardOK"
+        >
+    </p>
+    </form>
+    <button (click)="_d.gotoStore()">Back</button>
+</div>

@@ -1,0 +1,18 @@
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.reg-form-container{
+  display: flex;  
+  justify-content: center;
+}
+
+.reg-form{
+  width: 50vw;
+
+}
+

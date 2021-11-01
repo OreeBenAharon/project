@@ -1,0 +1,7 @@
+<div class="store-categs">
+    <mat-tab-group  (selectedTabChange)="_sd.searchByCategory($event)">
+        <mat-tab label="All" >  </mat-tab>
+        <mat-tab *ngFor="let categ of _d.categories" label="{{categ.categ}}" > </mat-tab>
+    </mat-tab-group>
+</div>
+  
