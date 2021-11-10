@@ -1,0 +1,132 @@
+# Details
+
+Date : 2021-11-08 23:39:38
+
+Directory c:\Users\Ori\Documents\CODES\general\project4
+
+Total : 117 files,  17322 codes, 240 comments, 692 blanks, all 18254 lines
+
+[summary](results.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [client/README.md](/client/README.md) | Markdown | 14 | 0 | 14 | 28 |
+| [client/angular.json](/client/angular.json) | JSON | 108 | 0 | 1 | 109 |
+| [client/karma.conf.js](/client/karma.conf.js) | JavaScript | 37 | 6 | 2 | 45 |
+| [client/package-lock.json](/client/package-lock.json) | JSON | 12,247 | 0 | 1 | 12,248 |
+| [client/package.json](/client/package.json) | JSON | 47 | 0 | 1 | 48 |
+| [client/src/app/admin-list/admin-list.component.css](/client/src/app/admin-list/admin-list.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/admin-list/admin-list.component.html](/client/src/app/admin-list/admin-list.component.html) | HTML | 4 | 2 | 1 | 7 |
+| [client/src/app/admin-list/admin-list.component.ts](/client/src/app/admin-list/admin-list.component.ts) | TypeScript | 17 | 0 | 12 | 29 |
+| [client/src/app/app-routing.module.ts](/client/src/app/app-routing.module.ts) | TypeScript | 23 | 0 | 3 | 26 |
+| [client/src/app/app.component.css](/client/src/app/app.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/app.component.html](/client/src/app/app.component.html) | HTML | 2 | 2 | 1 | 5 |
+| [client/src/app/app.component.spec.ts](/client/src/app/app.component.spec.ts) | TypeScript | 31 | 0 | 5 | 36 |
+| [client/src/app/app.component.ts](/client/src/app/app.component.ts) | TypeScript | 9 | 0 | 2 | 11 |
+| [client/src/app/app.module.ts](/client/src/app/app.module.ts) | TypeScript | 109 | 0 | 11 | 120 |
+| [client/src/app/components/admin-editbar/admin-editbar.component.css](/client/src/app/components/admin-editbar/admin-editbar.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/admin-editbar/admin-editbar.component.html](/client/src/app/components/admin-editbar/admin-editbar.component.html) | HTML | 86 | 0 | 15 | 101 |
+| [client/src/app/components/admin-editbar/admin-editbar.component.ts](/client/src/app/components/admin-editbar/admin-editbar.component.ts) | TypeScript | 31 | 0 | 12 | 43 |
+| [client/src/app/components/admin-item/admin-item.component.css](/client/src/app/components/admin-item/admin-item.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/admin-item/admin-item.component.html](/client/src/app/components/admin-item/admin-item.component.html) | HTML | 13 | 0 | 4 | 17 |
+| [client/src/app/components/admin-item/admin-item.component.ts](/client/src/app/components/admin-item/admin-item.component.ts) | TypeScript | 25 | 0 | 7 | 32 |
+| [client/src/app/components/admin-list/admin-list.component.css](/client/src/app/components/admin-list/admin-list.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/admin-list/admin-list.component.html](/client/src/app/components/admin-list/admin-list.component.html) | HTML | 3 | 0 | 1 | 4 |
+| [client/src/app/components/admin-list/admin-list.component.ts](/client/src/app/components/admin-list/admin-list.component.ts) | TypeScript | 15 | 0 | 13 | 28 |
+| [client/src/app/components/admin-main/admin-main.component.css](/client/src/app/components/admin-main/admin-main.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/admin-main/admin-main.component.html](/client/src/app/components/admin-main/admin-main.component.html) | HTML | 12 | 0 | 3 | 15 |
+| [client/src/app/components/admin-main/admin-main.component.ts](/client/src/app/components/admin-main/admin-main.component.ts) | TypeScript | 21 | 0 | 8 | 29 |
+| [client/src/app/components/header/header.component.css](/client/src/app/components/header/header.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/header/header.component.html](/client/src/app/components/header/header.component.html) | HTML | 21 | 0 | 4 | 25 |
+| [client/src/app/components/header/header.component.ts](/client/src/app/components/header/header.component.ts) | TypeScript | 17 | 0 | 6 | 23 |
+| [client/src/app/components/login-about/login-about.component.css](/client/src/app/components/login-about/login-about.component.css) | CSS | 3 | 0 | 0 | 3 |
+| [client/src/app/components/login-about/login-about.component.html](/client/src/app/components/login-about/login-about.component.html) | HTML | 8 | 0 | 4 | 12 |
+| [client/src/app/components/login-about/login-about.component.ts](/client/src/app/components/login-about/login-about.component.ts) | TypeScript | 13 | 0 | 7 | 20 |
+| [client/src/app/components/login-block/login-block.component.css](/client/src/app/components/login-block/login-block.component.css) | CSS | 3 | 0 | 0 | 3 |
+| [client/src/app/components/login-block/login-block.component.html](/client/src/app/components/login-block/login-block.component.html) | HTML | 55 | 0 | 2 | 57 |
+| [client/src/app/components/login-block/login-block.component.ts](/client/src/app/components/login-block/login-block.component.ts) | TypeScript | 22 | 0 | 8 | 30 |
+| [client/src/app/components/login-info/login-info.component.css](/client/src/app/components/login-info/login-info.component.css) | CSS | 5 | 0 | 1 | 6 |
+| [client/src/app/components/login-info/login-info.component.html](/client/src/app/components/login-info/login-info.component.html) | HTML | 25 | 0 | 6 | 31 |
+| [client/src/app/components/login-info/login-info.component.ts](/client/src/app/components/login-info/login-info.component.ts) | TypeScript | 52 | 0 | 10 | 62 |
+| [client/src/app/components/login-main/login-main.component.css](/client/src/app/components/login-main/login-main.component.css) | CSS | 4 | 1 | 2 | 7 |
+| [client/src/app/components/login-main/login-main.component.html](/client/src/app/components/login-main/login-main.component.html) | HTML | 5 | 0 | 0 | 5 |
+| [client/src/app/components/login-main/login-main.component.ts](/client/src/app/components/login-main/login-main.component.ts) | TypeScript | 20 | 0 | 8 | 28 |
+| [client/src/app/components/login-main/login-main.resolver.ts](/client/src/app/components/login-main/login-main.resolver.ts) | TypeScript | 14 | 0 | 9 | 23 |
+| [client/src/app/components/order-cart/order-cart.component.css](/client/src/app/components/order-cart/order-cart.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/order-cart/order-cart.component.html](/client/src/app/components/order-cart/order-cart.component.html) | HTML | 34 | 3 | 9 | 46 |
+| [client/src/app/components/order-cart/order-cart.component.ts](/client/src/app/components/order-cart/order-cart.component.ts) | TypeScript | 23 | 0 | 15 | 38 |
+| [client/src/app/components/order-form/order-form-popup.html](/client/src/app/components/order-form/order-form-popup.html) | HTML | 12 | 0 | 2 | 14 |
+| [client/src/app/components/order-form/order-form.component.css](/client/src/app/components/order-form/order-form.component.css) | CSS | 6 | 0 | 1 | 7 |
+| [client/src/app/components/order-form/order-form.component.html](/client/src/app/components/order-form/order-form.component.html) | HTML | 93 | 0 | 4 | 97 |
+| [client/src/app/components/order-form/order-form.component.ts](/client/src/app/components/order-form/order-form.component.ts) | TypeScript | 73 | 1 | 25 | 99 |
+| [client/src/app/components/order-main/order-main.component.css](/client/src/app/components/order-main/order-main.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/order-main/order-main.component.html](/client/src/app/components/order-main/order-main.component.html) | HTML | 4 | 0 | 0 | 4 |
+| [client/src/app/components/order-main/order-main.component.ts](/client/src/app/components/order-main/order-main.component.ts) | TypeScript | 11 | 0 | 6 | 17 |
+| [client/src/app/components/register-dialog/register-dialog.component.css](/client/src/app/components/register-dialog/register-dialog.component.css) | CSS | 13 | 0 | 6 | 19 |
+| [client/src/app/components/register-dialog/register-dialog.component.html](/client/src/app/components/register-dialog/register-dialog.component.html) | HTML | 93 | 0 | 6 | 99 |
+| [client/src/app/components/register-dialog/register-dialog.component.ts](/client/src/app/components/register-dialog/register-dialog.component.ts) | TypeScript | 31 | 0 | 11 | 42 |
+| [client/src/app/components/register-main/register-main.component.css](/client/src/app/components/register-main/register-main.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/register-main/register-main.component.html](/client/src/app/components/register-main/register-main.component.html) | HTML | 1 | 0 | 0 | 1 |
+| [client/src/app/components/register-main/register-main.component.ts](/client/src/app/components/register-main/register-main.component.ts) | TypeScript | 13 | 0 | 7 | 20 |
+| [client/src/app/components/store-bar/store-bar.component.css](/client/src/app/components/store-bar/store-bar.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/store-bar/store-bar.component.html](/client/src/app/components/store-bar/store-bar.component.html) | HTML | 4 | 0 | 2 | 6 |
+| [client/src/app/components/store-bar/store-bar.component.ts](/client/src/app/components/store-bar/store-bar.component.ts) | TypeScript | 14 | 0 | 8 | 22 |
+| [client/src/app/components/store-cart/store-cart.component.css](/client/src/app/components/store-cart/store-cart.component.css) | CSS | 17 | 0 | 3 | 20 |
+| [client/src/app/components/store-cart/store-cart.component.html](/client/src/app/components/store-cart/store-cart.component.html) | HTML | 47 | 7 | 7 | 61 |
+| [client/src/app/components/store-cart/store-cart.component.ts](/client/src/app/components/store-cart/store-cart.component.ts) | TypeScript | 27 | 27 | 18 | 72 |
+| [client/src/app/components/store-categs/store-categs.component.css](/client/src/app/components/store-categs/store-categs.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/store-categs/store-categs.component.html](/client/src/app/components/store-categs/store-categs.component.html) | HTML | 6 | 0 | 1 | 7 |
+| [client/src/app/components/store-categs/store-categs.component.ts](/client/src/app/components/store-categs/store-categs.component.ts) | TypeScript | 13 | 0 | 5 | 18 |
+| [client/src/app/components/store-form/store-form.component.css](/client/src/app/components/store-form/store-form.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/store-form/store-form.component.html](/client/src/app/components/store-form/store-form.component.html) | HTML | 14 | 0 | 2 | 16 |
+| [client/src/app/components/store-form/store-form.component.ts](/client/src/app/components/store-form/store-form.component.ts) | TypeScript | 15 | 0 | 9 | 24 |
+| [client/src/app/components/store-item/store-item-popup.html](/client/src/app/components/store-item/store-item-popup.html) | HTML | 13 | 0 | 2 | 15 |
+| [client/src/app/components/store-item/store-item.component.css](/client/src/app/components/store-item/store-item.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/store-item/store-item.component.html](/client/src/app/components/store-item/store-item.component.html) | HTML | 18 | 0 | 2 | 20 |
+| [client/src/app/components/store-item/store-item.component.ts](/client/src/app/components/store-item/store-item.component.ts) | TypeScript | 52 | 1 | 19 | 72 |
+| [client/src/app/components/store-list/store-list.component.css](/client/src/app/components/store-list/store-list.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/store-list/store-list.component.html](/client/src/app/components/store-list/store-list.component.html) | HTML | 3 | 1 | 1 | 5 |
+| [client/src/app/components/store-list/store-list.component.ts](/client/src/app/components/store-list/store-list.component.ts) | TypeScript | 17 | 0 | 7 | 24 |
+| [client/src/app/components/store-list/store-list.resolver.ts](/client/src/app/components/store-list/store-list.resolver.ts) | TypeScript | 20 | 1 | 8 | 29 |
+| [client/src/app/components/store-main/store-main.component.css](/client/src/app/components/store-main/store-main.component.css) | CSS | 0 | 0 | 1 | 1 |
+| [client/src/app/components/store-main/store-main.component.html](/client/src/app/components/store-main/store-main.component.html) | HTML | 18 | 0 | 3 | 21 |
+| [client/src/app/components/store-main/store-main.component.ts](/client/src/app/components/store-main/store-main.component.ts) | TypeScript | 19 | 0 | 8 | 27 |
+| [client/src/app/guards/admin.guard.spec.ts](/client/src/app/guards/admin.guard.spec.ts) | TypeScript | 12 | 0 | 5 | 17 |
+| [client/src/app/guards/admin.guard.ts](/client/src/app/guards/admin.guard.ts) | TypeScript | 16 | 0 | 5 | 21 |
+| [client/src/app/guards/auth.guard.spec.ts](/client/src/app/guards/auth.guard.spec.ts) | TypeScript | 12 | 0 | 5 | 17 |
+| [client/src/app/guards/auth.guard.ts](/client/src/app/guards/auth.guard.ts) | TypeScript | 16 | 4 | 5 | 25 |
+| [client/src/app/models/CartProduct.model.ts](/client/src/app/models/CartProduct.model.ts) | TypeScript | 10 | 0 | 0 | 10 |
+| [client/src/app/models/DialogData.model.ts](/client/src/app/models/DialogData.model.ts) | TypeScript | 4 | 0 | 0 | 4 |
+| [client/src/app/models/Product.model.ts](/client/src/app/models/Product.model.ts) | TypeScript | 7 | 0 | 0 | 7 |
+| [client/src/app/pipes/highlight.pipe.ts](/client/src/app/pipes/highlight.pipe.ts) | TypeScript | 16 | 0 | 4 | 20 |
+| [client/src/app/services/admin-data.service.ts](/client/src/app/services/admin-data.service.ts) | TypeScript | 82 | 0 | 20 | 102 |
+| [client/src/app/services/data.service.ts](/client/src/app/services/data.service.ts) | TypeScript | 247 | 6 | 27 | 280 |
+| [client/src/app/services/order-data.service.ts](/client/src/app/services/order-data.service.ts) | TypeScript | 93 | 0 | 12 | 105 |
+| [client/src/app/services/store-data.service.ts](/client/src/app/services/store-data.service.ts) | TypeScript | 147 | 32 | 31 | 210 |
+| [client/src/app/services/validators.service.ts](/client/src/app/services/validators.service.ts) | TypeScript | 35 | 6 | 12 | 53 |
+| [client/src/environments/environment.prod.ts](/client/src/environments/environment.prod.ts) | TypeScript | 3 | 0 | 1 | 4 |
+| [client/src/environments/environment.ts](/client/src/environments/environment.ts) | TypeScript | 3 | 11 | 3 | 17 |
+| [client/src/index.html](/client/src/index.html) | HTML | 16 | 0 | 1 | 17 |
+| [client/src/main.ts](/client/src/main.ts) | TypeScript | 9 | 0 | 4 | 13 |
+| [client/src/polyfills.ts](/client/src/polyfills.ts) | TypeScript | 1 | 57 | 8 | 66 |
+| [client/src/styles.css](/client/src/styles.css) | CSS | 122 | 21 | 33 | 176 |
+| [client/src/test.ts](/client/src/test.ts) | TypeScript | 18 | 4 | 4 | 26 |
+| [client/tsconfig.app.json](/client/tsconfig.app.json) | JSON | 14 | 1 | 1 | 16 |
+| [client/tsconfig.json](/client/tsconfig.json) | JSON | 29 | 1 | 1 | 31 |
+| [client/tsconfig.spec.json](/client/tsconfig.spec.json) | JSON | 17 | 1 | 1 | 19 |
+| [db.sql](/db.sql) | SQL | 70 | 0 | 22 | 92 |
+| [server/config/db.js](/server/config/db.js) | JavaScript | 14 | 0 | 3 | 17 |
+| [server/db.js](/server/db.js) | JavaScript | 27 | 0 | 6 | 33 |
+| [server/index.js](/server/index.js) | JavaScript | 17 | 10 | 11 | 38 |
+| [server/models/users.js](/server/models/users.js) | JavaScript | 31 | 0 | 4 | 35 |
+| [server/package-lock.json](/server/package-lock.json) | JSON | 1,932 | 0 | 1 | 1,933 |
+| [server/package.json](/server/package.json) | JSON | 22 | 0 | 1 | 23 |
+| [server/routes/admin.js](/server/routes/admin.js) | JavaScript | 39 | 1 | 3 | 43 |
+| [server/routes/cart.js](/server/routes/cart.js) | JavaScript | 134 | 24 | 24 | 182 |
+| [server/routes/login.js](/server/routes/login.js) | JavaScript | 120 | 5 | 13 | 138 |
+| [server/routes/order.js](/server/routes/order.js) | JavaScript | 77 | 0 | 8 | 85 |
+| [server/routes/store.js](/server/routes/store.js) | JavaScript | 49 | 3 | 12 | 64 |
+| [server/verify.js](/server/verify.js) | JavaScript | 16 | 1 | 4 | 21 |
+
+[summary](results.md)

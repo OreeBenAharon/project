@@ -1,3 +1,4 @@
+
 <div class="login-block login-div">
     <div class="login-msgs">
         <div class="login-msg">{{_d.user.status > -1 ? "Welcome back, "+_d.user.fname+"!" : "Hello! Please Log In or Register."}}</div>
@@ -8,41 +9,48 @@
         class="form"
         [formGroup]="loginForm"
         (ngSubmit)="_d.login(loginForm.controls.username.value, loginForm.controls.password.value)">
-        <div class="">
-            <input 
-                matInput 
-                class="text-input"
-                type="text"
-                palceholder="Username"
-                formControlName="username">
-            <p 
-                class="warning"
-                *ngIf="loginForm.controls.username.touched &&
-                loginForm.controls.username.invalid">
-                Username is missing.</p>
-        </div>
-        <div class="">
-            <input 
-                class="text-input"
-                type="password"
-                palceholder="Password"
-                formControlName="password">
-            <p 
-                class="warning" 
-                *ngIf="loginForm.controls.password.touched &&
-                loginForm.controls.password.invalid">
-                Password is missing.</p>
-        </div>
-            <p 
-                class="warning" 
-                *ngIf="_d.user.status === -99">
-                {{_d.titleMessage}}</p>
-            <input 
-            class="submit-btn"
-            type="submit"
-            value="Login"
-            [disabled]="!loginForm.controls.username.valid || !loginForm.controls.password.valid"
-            >
+            <div>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input 
+                        matInput 
+                        class="text-input"
+                        type="text"
+                        palceholder="Username"
+                        formControlName="username">
+                    <p 
+                        class="warning"
+                        *ngIf="loginForm.controls.username.touched &&
+                        loginForm.controls.username.invalid">
+                        Username is missing.</p>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input 
+                        class="text-input"
+                        type="password"
+                        palceholder="Password"
+                        formControlName="password">
+                    <p 
+                        class="warning" 
+                        *ngIf="loginForm.controls.password.touched &&
+                        loginForm.controls.password.invalid">
+                        Password is missing.</p>
+                </mat-form-field>
+            </div>
+                <p 
+                    class="warning" 
+                    *ngIf="_d.user.status === -99">
+                    {{_d.titleMessage}}</p>
+                <input 
+                class="submit-btn"
+                type="submit"
+                value="Login"
+                [disabled]="!loginForm.controls.username.valid || !loginForm.controls.password.valid"
+                >
         </form>
         <button (click)="_d.gotoRegister()">Register</button>
     </div>

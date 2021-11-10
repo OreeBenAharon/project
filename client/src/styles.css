@@ -143,10 +143,40 @@ td,th{
 .order-main{
     display: flex;
     flex-direction: row;
+    width: 100vw;
+
     justify-content: center;
+
     /* align-items: center; */
 }
 
+.order-container{
+    display: flex;
+    width: 750px;
+    height: 100vh;
+    /* justify-content: center; */
+    justify-content: space-around;
+    border-left: midnightblue solid 3px;
+    border-right: rgb(8, 8, 8) solid 3px;
+    background-color:rgb(232, 241, 255);
+    padding: 40px 15px 20px 15px;
+    /* align-items: center; */
+}
+
+.order-cart{
+    width:250px;
+    margin-left: 25px;
+}
+
+/* .order-form{
+    margin-left: 25px;
+}
+
+.order-input{
+    min-width: 210px;
+    max-width: 4210px;
+    width: 150px;
+} */
 .highlight {
     background: rgb(223, 255, 80);
    }
@@ -162,4 +192,15 @@ flex-wrap: wrap;
 
 .mat-radio-button {
     margin: 0 12px;
+  }
+
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
   }
