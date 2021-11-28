@@ -22,6 +22,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { MatCardModule } from '@angular/material/card';
@@ -53,6 +54,7 @@ import { HighlightPipe } from './pipes/highlight.pipe';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 
+// import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
@@ -106,7 +108,8 @@ import { AdminGuard } from './guards/admin.guard';
     MatNativeDateModule,
     MatRadioModule,
     MatListModule,
-
+    MatButtonModule,
+    // InputTextModule,
 
   ],
   exports: [MatSidenavModule],

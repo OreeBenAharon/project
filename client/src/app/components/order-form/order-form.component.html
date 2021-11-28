@@ -1,12 +1,14 @@
 <div class="order-form">
     <form
-    class="form example-form"
+    class=""
     *ngIf="orderFormGroup"
     [formGroup]="orderFormGroup"
     (ngSubmit)="createOrder()">
-    
+    <h2 class="order-title">
+        Details for Delivery:
+    </h2>
     <p>
-        <mat-form-field class="order-form-input " appearance="fill">
+        <mat-form-field class="order-input" appearance="fill">
             <mat-label>City:</mat-label>
             <select
                 class="order-input" 
@@ -28,21 +30,32 @@
         </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="fill" (dblclick)="_od.getUserDetails(2)">
-            <mat-label>Please fill your street address:</mat-label>
+            <!-- <input id="float-input" type="text" pInputText> 
+            <label for="float-input">Username</label> -->
+        <mat-form-field class="order-input" appearance="fill" (dblclick)="_od.getUserDetails(2)">
+            <mat-label>Street Address:</mat-label>
             <input
                 class="order-input" 
                 matInput
                 type="text"
-                palceholder="Street"
                 formControlName="streetCtrl"
                 (change)="_od.street = orderFormGroup.controls.streetCtrl.value"
                 (dblclick)="setDetails(2)" >
+
+                <!-- <input 
+                    class="order-input" 
+                    type="text"
+                    palceholder="Street"
+                    formControlName="streetCtrl"
+                    (change)="_od.street = orderFormGroup.controls.streetCtrl.value"
+                    (dblclick)="setDetails(2)"
+                    pInputText >  
+                    <label for="float-input">Street</label>-->
         </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="fill">
-            <mat-label>Pick a shipping date</mat-label>
+        <mat-form-field class="order-input" appearance="fill">
+            <mat-label>Shipping Date</mat-label>
             <input 
                 class="order-input"
                 matInput
@@ -66,8 +79,8 @@
         </p>
     
     <p>
-        <mat-form-field appearance="fill" >
-            <mat-label>Please fill your credit card number:</mat-label>
+        <mat-form-field class="order-input" appearance="fill" >
+            <mat-label>Credit Card Number:</mat-label>
             <input 
                 class="order-input"
                 matInput
@@ -89,24 +102,13 @@
     
     <p>
         <input 
-            class="submit-btn order-input"
+            class="submit-btn order-input order-submit-btn"
             type="submit"
             value="Order"
             [disabled]="!orderFormGroup.controls.cityCtrl.valid || !orderFormGroup.controls.streetCtrl.valid || !_od.dateOK || !_od.cardOK"
         >
     </p>
     </form>
-    <button (click)="_d.gotoStore()">Back</button>
 </div>
 
-<form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
-    </mat-form-field>
-  
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
-  </form>
+  <!-- <input type="text" pInputText /> -->

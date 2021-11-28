@@ -1,8 +1,12 @@
 <div class="store-cart order-cart" >
-  <p>Product Search:<input type="text" (input)="_od.setSearchValue($event)">
-  </p>
-    <p>Your Cart:</p>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+  <button class="order-back-btn" mat-mini-fab color="primary" (click)="_d.gotoStore()">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
+  <h2 class="order-title">
+    Your Cart:
+</h2>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table cart-table">
         <ng-container matColumnDef="picture">
           <th class="" mat-header-cell *matHeaderCellDef>  </th>
           <td mat-cell *matCellDef="let element">
@@ -14,7 +18,9 @@
         <!-- Name Column -->
         <ng-container matColumnDef="title">
           <th mat-header-cell *matHeaderCellDef> Title </th>
-          <td mat-cell *matCellDef="let element" #refEl> <div innerHTML = "{{element.title | highlight}}" ></div>  </td>
+          <td mat-cell *matCellDef="let element" #refEl>
+            <div innerHTML = "{{element.title | highlight}}"></div>
+          </td>
         </ng-container>
       
         <!-- Amount Column -->
@@ -37,7 +43,9 @@
       <br>
       <br>
       <div class="cart-footer">
-       
+        <p>Product Search:
+          <input type="text" (input)="_od.setSearchValue($event)">
+        </p>
         <p>TOTAL: {{_d.user.total > 0 ? _d.user.total : 0}} ₪</p> 
       </div>
 </div>

@@ -7,7 +7,6 @@ import { OrderDataService } from 'src/app/services/order-data.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { StoreItemPopup } from '../store-item/store-item.component';
 
-
 @Component({
   selector: 'app-order-form',
   templateUrl: './order-form.component.html',

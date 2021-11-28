@@ -1,14 +1,14 @@
 <div class="app-cart">
-    <mat-drawer-container class="drawer-container"  width="500">
+    <mat-drawer-container class="drawer-container"  width="500" height="1.3em">
         <mat-drawer #drawer class="sidenav" mode="side">
             <app-store-cart></app-store-cart>
         </mat-drawer>
 
         <div class="drawer-content">
             <div class="store-main-container">
-                <div class="store-header">
-                    <button type="button" mat-button (click)="drawer.toggle()">
-                        <mat-icon>shopping_cart</mat-icon> Show Carty
+                <div class="store-header">  
+                    <button class="opencart-btn" type="button" mat-button (click)="drawer.toggle()">
+                        <mat-icon>shopping_cart</mat-icon> 
                     </button>
                     <app-store-bar></app-store-bar> 
                 </div>

@@ -26,6 +26,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "angular-material": "^1.2.3",
     "forms-angular": "^0.12.0-beta.162",
+    "primeicons": "^5.0.0",
+    "primeng": "^13.0.0-rc.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

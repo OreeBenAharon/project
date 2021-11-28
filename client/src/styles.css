@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 html, body { 
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+    font-family: Assistant, sans-serif !important;
     height: 100vh; 
     width: 100vw; 
+
 }
 
 .header{
@@ -14,8 +16,24 @@ html, body {
     justify-content: space-between;
     align-items: center;
     border: 2px solid black;
+    background-image: url('https://cdn.istores.co.il/image/upload/t_manymany_theme/v1600973448/clients/105882/40036222e82530a2ab0d7bdebd10bc00597d834e.jpg');
+    opacity: 0.6;
+    /* position: absolute; */
+    /* left: 0; */
+    /* top: 0; */
+    /* width: 100%; */
 }
 
+.logo-img{
+    background-color: white;
+    object-fit: cover;
+    width:140px;
+    height: 80px;
+    box-sizing:border-box;
+    border-radius: 8px ;
+    opacity: 1;
+    /* border: black solid 5px; */
+}
 .login-logout{
     /* padding: 10px; */
     margin: 40px;
@@ -69,12 +87,11 @@ html, body {
     height: 90vh;
 }
 
-/* .store-cart{
-    width: 4000px
-} */
-/* .store-search-icons{
-    border: ;
-} */
+.cart-table{
+    box-shadow: none;
+    border: 0;
+    margin: 0 !important;
+}
 
 td,th{
     padding: 13px !important;
@@ -82,10 +99,30 @@ td,th{
 
   }
 
+tr.mat-footer-row {
+    font-weight: bold;
+}
+
+.cart-footer{
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.empty-message{
+    width:270px;
+    text-align: center;
+
+}
+
+.store-header{
+    display: flex;
+    justify-content: space-between;
+}
+
 .store-bar-container{
     /* border: 2px solid purple; */
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -97,6 +134,9 @@ td,th{
      width: 85% 
 } */
 
+.opencart-btn{
+    height: 52px;
+}
 .store-list-container{
     display: flex;
     flex-direction: row;
@@ -133,13 +173,6 @@ td,th{
 .popup-msg {
     text-align: center;
 }
-.store-header{
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-between; */
-    justify-content: center;
-}
-
 .order-main{
     display: flex;
     flex-direction: row;
@@ -152,34 +185,69 @@ td,th{
 
 .order-container{
     display: flex;
-    width: 750px;
+    width: 950px;
     height: 100vh;
     /* justify-content: center; */
     justify-content: space-around;
+    align-items: stretch;
     border-left: midnightblue solid 3px;
     border-right: rgb(8, 8, 8) solid 3px;
     background-color:rgb(232, 241, 255);
-    padding: 40px 15px 20px 15px;
+    /* padding: 40px 15px 20px 15px; */
+    padding: 45px;
     /* align-items: center; */
 }
 
 .order-cart{
-    width:250px;
-    margin-left: 25px;
+    width:310px;
+    margin: 15px;
+    /* border: rgb(232, 241, 255) 1px groove; */
+    border-radius: 10px;
+    box-shadow: 3px 3px 11px 1px rgba(0, 0, 0, 0.1);
+    background-color:rgb(255, 255, 255);
+    /* padding: 0 ; */
+    padding: 15px 45px 45px 45px ;
+
 }
 
-/* .order-form{
-    margin-left: 25px;
+.order-form{
+    width:310px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 11px 1px rgba(0, 0, 0, 0.1);
+    background-color:rgb(255, 255, 255);
+    padding: 45px;
 }
 
+.order-title{
+    font-weight: 700 !important;
+    /* font-family: assistant !important; */
+
+}
 .order-input{
-    min-width: 210px;
-    max-width: 4210px;
-    width: 150px;
-} */
+    /* min-width: 210px;
+    max-width: 4210px; */
+    /* width: 150px; */
+    width: 100%;
+    /* background-color:lightskyblue; */
+}
 .highlight {
     background: rgb(223, 255, 80);
    }
+.order-submit-btn{
+    padding: 5px 0 5px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.order-back-btn{
+    width: 0 !important;
+    height: 0 !important;
+    transform: translate(-10px, -50px);
+}
+
+
+    /* admin */
 
 .admin-list-container{
 display: flex;
@@ -201,6 +269,16 @@ flex-wrap: wrap;
     width: 100%;
   }
   
-  .example-full-width {
+.example-full-width {
     width: 100%;
-  }
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+
+/* justify-content: start; */
+}
+
+.mat-radio-button {
+    margin: 0 12px;
+}

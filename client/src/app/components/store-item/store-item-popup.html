@@ -5,7 +5,7 @@
     <img src={{data.item.pic}} alt="{{data.item.title}} picture" width="120" height="90">
     <div mat-dialog-content>
         <p class="popup-msg">How much?</p>
-        <input type="number" value=1 matInput #amount>
+        <input type="number" value=1 min="1" matInput #amount>
     </div>
     <div class="store-popup-btns" mat-dialog-actions>
     <button (click)="addItem(data.item.id,(int(amount.value)))" mat-button cdkFocusInitial >OK</button>

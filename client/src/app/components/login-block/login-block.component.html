@@ -24,13 +24,15 @@
                         *ngIf="loginForm.controls.username.touched &&
                         loginForm.controls.username.invalid">
                         Username is missing.</p>
+                    
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field appearance="fill">
                     <mat-label>Password</mat-label>
                     <input 
-                        class="text-input"
+                        matInput
+                        class="text-input2"
                         type="password"
                         palceholder="Password"
                         formControlName="password">
@@ -45,13 +47,21 @@
                     class="warning" 
                     *ngIf="_d.user.status === -99">
                     {{_d.titleMessage}}</p>
-                <input 
+                <button 
+                mat-stroked-button
                 class="submit-btn"
                 type="submit"
                 value="Login"
                 [disabled]="!loginForm.controls.username.valid || !loginForm.controls.password.valid"
-                >
+                >Login</button>
+                <!-- <input 
+                mat-stroked-button
+                class="submit-btn"
+                type="submit"
+                value="Login"
+                [disabled]="!loginForm.controls.username.valid || !loginForm.controls.password.valid"
+                > -->
         </form>
-        <button (click)="_d.gotoRegister()">Register</button>
+        <button mat-stroked-button color="primary" (click)="_d.gotoRegister()">Register</button>
     </div>
 </div>

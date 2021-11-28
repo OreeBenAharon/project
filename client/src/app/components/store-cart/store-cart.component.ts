@@ -41,7 +41,7 @@ export class StoreCartComponent implements OnInit {
 
   showFiller = true;
   
-  displayedColumns: string[] = ['position', 'title', 'amount', 'price'];
+  displayedColumns: string[] = ['picture', 'title', 'amount', 'price', 'position' ];
   // dataSource = this._d.cart;
 
   // public async deleteFromCart(id:number) {
@@ -60,7 +60,7 @@ export class StoreCartComponent implements OnInit {
 
   ngOnInit(): void {
     this._sd.table = this.table
-    console.log( this._d.cart)
+    // console.log( this._d.cart)
     // this.table.renderRows()
     // this.dataSource = this._d.cart;
   }
