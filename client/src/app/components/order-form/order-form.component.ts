@@ -62,7 +62,7 @@ public setDetails(q:number) {
   }
 }
 
-// //*****
+// ***** POPUP *****
   
 @Component({
   selector: 'order-form-popup',

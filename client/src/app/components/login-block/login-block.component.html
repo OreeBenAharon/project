@@ -43,25 +43,25 @@
                         Password is missing.</p>
                 </mat-form-field>
             </div>
+            <div class="login-buttons flex-between">
                 <p 
                     class="warning" 
                     *ngIf="_d.user.status === -99">
                     {{_d.titleMessage}}</p>
+            
                 <button 
-                mat-stroked-button
-                class="submit-btn"
-                type="submit"
-                value="Login"
-                [disabled]="!loginForm.controls.username.valid || !loginForm.controls.password.valid"
-                >Login</button>
-                <!-- <input 
-                mat-stroked-button
-                class="submit-btn"
-                type="submit"
-                value="Login"
-                [disabled]="!loginForm.controls.username.valid || !loginForm.controls.password.valid"
-                > -->
+                    mat-stroked-button
+                    class="submit-btn"
+                    type="submit"
+                    value="Login"
+                    [disabled]="!loginForm.controls.username.valid || !loginForm.controls.password.valid"
+                    >Login</button>
+                <button
+                    mat-stroked-button
+                    color="primary"
+                    (click)="_d.gotoRegister()">
+                    Register</button>
+            </div>
         </form>
-        <button mat-stroked-button color="primary" (click)="_d.gotoRegister()">Register</button>
     </div>
 </div>

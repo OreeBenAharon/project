@@ -80,6 +80,7 @@ export class OrderDataService {
         });
         const fileName = await res.json()
         this.filePath = "http://localhost:1001/receptions/" + fileName.filename
+        // this.filePath = "../receptions/" + fileName.filename
     } catch (error) {
       console.log(error);
     }
@@ -95,6 +96,7 @@ export class OrderDataService {
           a.download = this.filePath;
           a.click();
           URL.revokeObjectURL(objectUrl);
+
       })
     }
 
