@@ -40,7 +40,7 @@ export class OrderDataService {
     dateConverted.setTime(this.date.setMinutes(this.date.getMinutes() - this.date.getTimezoneOffset()))
     const dateFormatted = dateConverted.toISOString().slice(0,10)
     try {
-      const res = await fetch (`http://localhost:1001/order/checkday/?date=${dateFormatted}`, {
+      const res = await fetch (`https://online-shop-bakery.herokuapp.com:1001/order/checkday/?date=${dateFormatted}`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
@@ -72,14 +72,14 @@ export class OrderDataService {
     dateConverted.setTime(this.date.setMinutes(this.date.getMinutes() - this.date.getTimezoneOffset()))
     const date = dateConverted.toISOString().slice(0,10)
       try {
-        const res = await fetch('http://localhost:1001/order/', {
+        const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/order/', {
           method: 'POST',
           headers: {'content-type': 'application/json',
                     authorization: localStorage.token},
           body: JSON.stringify({city:this.city, street:this.street, date, card:this.card}),
         });
         const fileName = await res.json()
-        this.filePath = "http://localhost:1001/receptions/" + fileName.filename
+        this.filePath = "https://online-shop-bakery.herokuapp.com:1001/receptions/" + fileName.filename
         // this.filePath = "../receptions/" + fileName.filename
     } catch (error) {
       console.log(error);

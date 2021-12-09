@@ -1,4 +1,5 @@
 const express = require('express')
+let port = process.env.PORT||1001
 const path = require('path');
 
 const { verify } = require ("./verify");
@@ -18,13 +19,17 @@ app.use('/order', require('./routes/order'))
 app.use('/admin', require('./routes/admin'))
 
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
+
 app.get('/receptions/:file', verify, (req, res) => {
 
     // res.download(path.join(__dirname + `/receptions/${req.params.file}`), "123.txt")
     // res.download(req.params.file)
     var options = {
         root: path.join(__dirname, `/receptions/`),
-        headers: {'filename': "123.txt"}
+        headers: {'filename':"123.txt"}
     }
     
     // console.log(req.params.file)
@@ -49,4 +54,4 @@ app.get('/receptions/:file', verify, (req, res) => {
 // });
 
 
-app.listen(1001, ()=>console.log("listening to 1001"))
+app.listen(port, ()=>console.log("listening to",port))

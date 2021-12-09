@@ -41,7 +41,7 @@ export class StoreDataService {
 
     if (c.index > 0) {
       try {
-        const res = await fetch (`http://localhost:1001/store/products/categ/${c.index}`, {
+        const res = await fetch (`https://online-shop-bakery.herokuapp.com:1001/store/products/categ/${c.index}`, {
             method: 'GET',
             headers: {
               authorization: localStorage.token,
@@ -61,7 +61,7 @@ export class StoreDataService {
   public async searchByName (q:string) {
     console.log("q is",q)
     try {
-      const res = await fetch (`http://localhost:1001/store/products/title/${q}`, {
+      const res = await fetch (`https://online-shop-bakery.herokuapp.com:1001/store/products/title/${q}`, {
           method: 'GET',
           headers: {
             authorization: localStorage.token,
@@ -108,7 +108,7 @@ export class StoreDataService {
   public async add(productId:number,amount:number) {
     console.log("id:",productId,"amount",amount)
     try {
-      const res = await fetch('http://localhost:1001/cart/add', {
+      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/cart/add', {
         method: 'POST',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token},
@@ -135,7 +135,7 @@ export class StoreDataService {
       console.log("anount:",itemInCart.amount)
       console.log("anount got:",amount)
       if (this._d.cart.find(item => item.product_id == productId).amount + amount > 0) {
-        const res = await fetch('http://localhost:1001/cart/changeamount', {
+        const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/cart/changeamount', {
         method: 'PUT',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token},
@@ -160,7 +160,7 @@ export class StoreDataService {
   public async delete(productId:number) {
     console.log("got 2 del",productId)
     try {
-      const res = await fetch('http://localhost:1001/cart/delete', {
+      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/cart/delete', {
         method: 'DELETE',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token},
@@ -180,7 +180,7 @@ export class StoreDataService {
 
   public async empty() {
     try {
-      const res = await fetch('http://localhost:1001/cart/empty', {
+      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/cart/empty', {
         method: 'DELETE',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token}
