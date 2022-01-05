@@ -41,7 +41,7 @@ export class StoreDataService {
 
     if (c.index > 0) {
       try {
-        const res = await fetch (`https://online-shop-bakery.herokuapp.com:1001/store/products/categ/${c.index}`, {
+        const res = await fetch (`https://online-shop-bakery.herokuapp.com/store/products/categ/${c.index}`, {
             method: 'GET',
             headers: {
               authorization: localStorage.token,
@@ -61,7 +61,7 @@ export class StoreDataService {
   public async searchByName (q:string) {
     console.log("q is",q)
     try {
-      const res = await fetch (`https://online-shop-bakery.herokuapp.com:1001/store/products/title/${q}`, {
+      const res = await fetch (`https://online-shop-bakery.herokuapp.com/store/products/title/${q}`, {
           method: 'GET',
           headers: {
             authorization: localStorage.token,
@@ -76,7 +76,7 @@ export class StoreDataService {
 
   // public async getCartToRefresh () {
   //   try {
-  //     const res:any = await fetch('http://localhost:1001/cart/', {
+  //     const res:any = await fetch('http://localhost/cart/', {
   //       method: 'GET',
   //       headers: {'content-type': 'application/json',
   //                 'authorization': localStorage.token}
@@ -86,10 +86,10 @@ export class StoreDataService {
   //     return res
   //     // localStorage.token = res.token
 
-  //     // const categs = await fetch('http://localhost:1001/store/categs')
+  //     // const categs = await fetch('http://localhost/store/categs')
   //     // this.categories = await categs.json()
 
-  //     // const products = await fetch('http://localhost:1001/store/products')
+  //     // const products = await fetch('http://localhost/store/products')
   //     // this.products = await products.json()
 
   //   } catch (error) {
@@ -108,7 +108,7 @@ export class StoreDataService {
   public async add(productId:number,amount:number) {
     console.log("id:",productId,"amount",amount)
     try {
-      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/cart/add', {
+      const res = await fetch('https://online-shop-bakery.herokuapp.com/cart/add', {
         method: 'POST',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token},
@@ -135,7 +135,7 @@ export class StoreDataService {
       console.log("anount:",itemInCart.amount)
       console.log("anount got:",amount)
       if (this._d.cart.find(item => item.product_id == productId).amount + amount > 0) {
-        const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/cart/changeamount', {
+        const res = await fetch('https://online-shop-bakery.herokuapp.com/cart/changeamount', {
         method: 'PUT',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token},
@@ -160,7 +160,7 @@ export class StoreDataService {
   public async delete(productId:number) {
     console.log("got 2 del",productId)
     try {
-      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/cart/delete', {
+      const res = await fetch('https://online-shop-bakery.herokuapp.com/cart/delete', {
         method: 'DELETE',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token},
@@ -180,7 +180,8 @@ export class StoreDataService {
 
   public async empty() {
     try {
-      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/cart/empty', {
+      // :1001
+      const res = await fetch('https://online-shop-bakery.herokuapp.com/cart/empty', {
         method: 'DELETE',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token}

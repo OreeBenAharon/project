@@ -62,7 +62,7 @@ export class AdminDataService {
                         price:number,
                         pic:string) {
     try {
-      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/admin/add', {
+      const res = await fetch('https://online-shop-bakery.herokuapp.com/admin/add', {
         method: 'POST',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token},
@@ -83,7 +83,7 @@ export class AdminDataService {
                          pic:string) {
     console.log(productId, title, categ, price, pic)
     try {
-      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/admin/edit', {
+      const res = await fetch('https://online-shop-bakery.herokuapp.com/admin/edit', {
         method: 'PUT',
         headers: {'content-type': 'application/json',
                   authorization: localStorage.token},

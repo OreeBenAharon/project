@@ -30,7 +30,7 @@ export class DataService {
   public async ifIdExist (id:number) {
     try {
       // const res = await fetch(`http://localhost:1001/login/ifidexists`, {
-      const res = await fetch(`https://online-shop-bakery.herokuapp.com:1001/login/ifidexists`, {
+      const res = await fetch(`https://online-shop-bakery.herokuapp.com/login/ifidexists`, {
         method: 'GET',
         headers: {
           id:JSON.stringify(id)
@@ -48,7 +48,7 @@ export class DataService {
 
   public async ifUsernameExist (username:string) {
     try {
-      const res = await fetch(`https://online-shop-bakery.herokuapp.com:1001/login/ifusernameexists`, {
+      const res = await fetch(`https://online-shop-bakery.herokuapp.com/login/ifusernameexists`, {
         method: 'GET',
         headers: {
           username:username
@@ -84,7 +84,7 @@ export class DataService {
                         street:string) {
     this.registerResult = undefined
     try {
-      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/login/reg', {
+      const res = await fetch('https://online-shop-bakery.herokuapp.com/login/reg', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify({id,
@@ -114,7 +114,7 @@ export class DataService {
   }
   public async login (username, password) {
     try {
-      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/login/login', {
+      const res = await fetch('https://online-shop-bakery.herokuapp.com/login/login', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify({username,password}),
@@ -198,14 +198,14 @@ export class DataService {
 
   public async shopMainData () {
     try {
-      const categs = await fetch('https://online-shop-bakery.herokuapp.com:1001/store/categs'
+      const categs = await fetch('https://online-shop-bakery.herokuapp.com/store/categs'
             , {
         method: 'GET',
         headers: { authorization: localStorage.token },
       })
       const allcategories = await categs.json()
       this.categories = allcategories.categs
-      const products = await fetch('https://online-shop-bakery.herokuapp.com:1001/store/products', {
+      const products = await fetch('https://online-shop-bakery.herokuapp.com/store/products', {
         method: 'GET',
         headers: { authorization: localStorage.token },
       })
@@ -222,7 +222,7 @@ export class DataService {
   }
   public async getCategories () {
     try {
-      const categs = await fetch('https://online-shop-bakery.herokuapp.com:1001/store/categs'
+      const categs = await fetch('https://online-shop-bakery.herokuapp.com/store/categs'
             , {
         method: 'GET',
         headers: {
@@ -239,7 +239,7 @@ export class DataService {
 
   public async getProducts () {
     try {
-      const products = await fetch('https://online-shop-bakery.herokuapp.com:1001/store/products', {
+      const products = await fetch('https://online-shop-bakery.herokuapp.com/store/products', {
         method: 'GET',
         headers: {
           authorization: localStorage.token,
@@ -256,7 +256,7 @@ export class DataService {
 
   public async getCart () {
     try {
-      const res:any = await fetch('https://online-shop-bakery.herokuapp.com:1001/cart/', {
+      const res:any = await fetch('https://online-shop-bakery.herokuapp.com/cart/', {
         method: 'GET',
         headers: {'content-type': 'application/json',
                   'authorization': localStorage.token}
