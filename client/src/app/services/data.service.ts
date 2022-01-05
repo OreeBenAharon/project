@@ -185,10 +185,12 @@ export class DataService {
   
   public async getShopInfo () {
     try {
+      console.log("trying...")
       const res = await fetch('https://online-shop-bakery.herokuapp.com/login/shopinfo');
+      console.log("sent...")
       const {products,orders} = await res.json();
       this.mainData = {products,orders}
-      console.log({products,orders});
+      console.log("got!",{products,orders});
     } catch (error) {
       console.log(error);
     }
