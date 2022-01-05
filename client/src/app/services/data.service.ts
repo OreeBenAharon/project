@@ -51,7 +51,7 @@ export class DataService {
       const res = await fetch(`https://online-shop-bakery.herokuapp.com/login/ifusernameexists`, {
         method: 'GET',
         headers: {
-          username:username
+          'username':username
         },
       });
       const result = await res.json()
