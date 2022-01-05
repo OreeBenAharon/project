@@ -1,13 +1,39 @@
-const mysql = require("mysql")
+const mysql = require("mysql2")
 
-const con = mysql.createConnection({
-
-    host:"eu-cdbr-west-01.cleardb.com",
-    user:"b70d4b44da7345",
-    password:"723bba51",
-    database:"heroku_a937d7843c7528a",
-    timezone:"Z"
+const con = mysql.createPool({
+    // connectionLimit : 10,
+    connectionLimit : 1000,
+    connectTimeout  : 60 * 60 * 1000,
+    acquireTimeout  : 60 * 60 * 1000,
+    timeout         : 60 * 60 * 1000,
+    host:"db-mysql-nyc3-46477-do-user-10481534-0.b.db.ondigitalocean.com",
+    user:"doadmin",
+    password:"SJXpXrc9zold99yh",
+    // user:"someuser",
+    // password:"a123456789",
+    database:"defaultdb",
+    timezone:"Z",
+    port:25060
 })
+
+// con.on('connection', function (connection) {
+//     console.log('DB Connection established');
+//     connection.on('error', function (err) {
+//         console.error(new Date(), 'MySQL error', err.code);
+//         });
+//     connection.on('close', function (err) {
+//         console.error(new Date(), 'MySQL close', err);
+//         });
+//   });
+
+// const con = mysql.createConnection({
+
+//     host:"db-mysql-nyc3-46477-do-user-10481534-0.b.db.ondigitalocean.com",
+//     user:"doadmin",
+//     password:"SJXpXrc9zold99yh",
+//     database:"defaultdb",
+//     timezone:"Z"
+// })
 
 // const con = mysql.createConnection({
 
@@ -18,14 +44,17 @@ const con = mysql.createConnection({
 //     timezone:"Z"
 // })
 
-con.connect(err=>{
-    if (err) {
-        console.log(err)
-    } else {
-        console.log("connected to mysql")    
-        }
-    }
-    )
+// con.connect(err=>{
+//     if (err) {
+//         console.log(err)
+//     } else {
+//         console.log("connected to mysql")    
+//         }
+//     }
+//     )
+
+
+
 
 const myQuery = (q) =>{
     return new Promise ((resolve,reject)=>{
@@ -39,3 +68,4 @@ const myQuery = (q) =>{
 })}
 
 module.exports = { myQuery };
+

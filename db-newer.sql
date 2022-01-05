@@ -26,7 +26,7 @@ create table IF NOT EXISTS products (
     price int,
     pic varchar(255),
     primary key(id),
-    foreign key (categ) references categories.id
+    foreign key (categ_id) references categories(id)
 );
 
 create table IF NOT EXISTS carts (
@@ -34,7 +34,7 @@ create table IF NOT EXISTS carts (
 	user_id int,
     created datetime,
 	primary key(id),
-    foreign key (user_id) references users.id
+    foreign key (user_id) references users(id)
 );
 
 create table IF NOT EXISTS cart_products (
@@ -43,8 +43,8 @@ create table IF NOT EXISTS cart_products (
     amount int,
     cart_id int,
     primary key(id),
-	foreign key (product_id) references products.id,
-    foreign key (cart_id) references carts.id
+	foreign key (product_id) references products(id),
+    foreign key (cart_id) references carts(id)
 );
 
 create table IF NOT EXISTS orders (
@@ -59,22 +59,23 @@ create table IF NOT EXISTS orders (
     street varchar(255),
     credit_card int,
     primary key(id),
-	foreign key (user_id) references users.id);
+	foreign key (user_id) references users(id)
+    );
     
-insert IGNORE into categories (categ)
-VALUES ("Bread"),  ("Challah"), ("Special");  
+insert  into categories (categ)
+VALUES ('Bread'),  ('Challah'), ('Special');  
     
 -- insert IGNORE into categories (categ)
--- VALUES ("Bread",  "Challah", "Special");  
+-- VALUES ('Bread',  'Challah', 'Special');  
     
-insert IGNORE into products (title,categ,price,pic)
-VALUES ("Spelt Bread",1,24, "https://bit.ly/37x7io2" )
-,("Serials Bread",1,22, "https://bit.ly/3s4VS4p" )
-,("Rye Bread",1,24, "https://bit.ly/37x7RhE" )
-,("Spelt Challa",2,16, "https://bit.ly/3iAunwG" )
-,("Sweet Challah",2,14, "https://bit.ly/3xDIK7n" )
-,("Olive Oil Brioche",3,25, "https://bit.ly/2VIRsnY" )
-,("Dorom Bread",1,20, "https://bit.ly/2Xbl8e2" );
+insert into products (title, categ_id, price, pic)
+VALUES ('Spelt Bread', 1, 24, 'https://bit.ly/37x7io2' )
+,('Serials Bread', 1, 22, 'https://bit.ly/3s4VS4p' )
+,('Rye Bread',1, 24, 'https://bit.ly/37x7RhE' )
+,('Spelt Challa', 2, 16, 'https://bit.ly/3iAunwG' )
+,('Sweet Challah', 2, 14, 'https://bit.ly/3xDIK7n' )
+,('Olive Oil Brioche', 3, 25, 'https://bit.ly/2VIRsnY' )
+,('Dorom Bread', 1, 20, 'https://bit.ly/2Xbl8e2' );
 
 --     ALTER TABLE cart_products
  
@@ -84,8 +85,8 @@ VALUES ("Spelt Bread",1,24, "https://bit.ly/37x7io2" )
 -- ALTER TABLE cart_products DROP COLUMN user_id;
 
 
-
-
+SHOW GRANTS;
+GRANT ALL ON defaultdb.* to 'doadmin'@'db-mysql-nyc3-46477-do-user-10481534-0.b.db.ondigitalocean.com';
 
 
 

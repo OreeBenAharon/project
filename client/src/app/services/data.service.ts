@@ -39,8 +39,8 @@ export class DataService {
       const result = await res.json()
       console.log(result);
       this.regErrors.id = result
-      // אם שני התוצאות אמת, להעאביר הלאה להמשך רישום.
-      // אם לא, להציג הודעה מתאימה.
+      // if both results are true, pass on to registration
+      // otherwise, show relevant message
     } catch (error) {
       console.log(error);
     }
@@ -58,8 +58,8 @@ export class DataService {
       console.log("email:",result);
       this.regErrors.username = result
 
-      // אם שני התוצאות אמת, להעאביר הלאה להמשך רישום.
-      // אם לא, להציג הודעה מתאימה.
+      // if both results are true, pass on to registration
+      // otherwise, show relevant message
 
     } catch (error) {
       console.log(error);
@@ -185,7 +185,7 @@ export class DataService {
   
   public async getShopInfo () {
     try {
-      const res = await fetch('https://online-shop-bakery.herokuapp.com:1001/login/shopinfo');
+      const res = await fetch('https://online-shop-bakery.herokuapp.com/login/shopinfo');
       const {products,orders} = await res.json();
       this.mainData = {products,orders}
       console.log({products,orders});
