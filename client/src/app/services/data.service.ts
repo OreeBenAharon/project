@@ -46,12 +46,12 @@ export class DataService {
     }
   }
 
-  public async ifUsernameExist (username:string) {
+  public async ifUsernameExist (email:string) {
     try {
       const res = await fetch(`https://online-shop-bakery.herokuapp.com/login/ifusernameexists`, {
         method: 'GET',
         headers: {
-          'username':username
+          'username':email
         },
       });
       const result = await res.json()
@@ -153,6 +153,7 @@ export class DataService {
       } else {     
         const data = await res.json() 
         this.user.status = -99
+        console.log(data)
         console.log(this.user.status)
         this.titleMessage = data.msg
         console.log(data.msg);
