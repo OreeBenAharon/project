@@ -204,6 +204,7 @@ export class DataService {
         method: 'GET',
         headers: { authorization: localStorage.token },
       })
+      console.log("categs are",categs);
       const allcategories = await categs.json()
       this.categories = allcategories.categs
       const products = await fetch('https://online-shop-bakery.herokuapp.com/store/products', {
@@ -212,6 +213,7 @@ export class DataService {
       })
       const allProducts = await products.json()
       this.products = await allProducts.products
+
       console.log(this.products)
       if (this.user.admin)
         this._r.navigateByUrl("admin")
@@ -230,6 +232,7 @@ export class DataService {
           authorization: localStorage.token,
         },
       })
+      console.log("categs are",categs);
       const allCategories = await categs.json()
       return {allCategories}
     } catch (error) {
@@ -262,7 +265,10 @@ export class DataService {
         headers: {'content-type': 'application/json',
                   'authorization': localStorage.token}
       });
+
       const data = await res.json()
+      console.log("data are",data);
+
       this.cart = data.cart 
     } catch (error) {
       console.log(error);

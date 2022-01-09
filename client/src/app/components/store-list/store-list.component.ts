@@ -15,7 +15,7 @@ export class StoreListComponent implements OnInit {
 
   ngOnInit(): void {
       if (this._sd.chosenCateg === 0) this._d.itemsToShow = this._d.products
-      console.log(this._d.itemsToShow)
+      console.log("store-list-ngoninit",this._d.itemsToShow)
       
 
   }
