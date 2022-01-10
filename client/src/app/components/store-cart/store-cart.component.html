@@ -1,7 +1,8 @@
 <div class="store-cart">
     <!-- <p *ngIf="_d.user.total > 0">Your Cart:</p>
     <p *ngIf="_d.user.total === 0">Your Cart Is Empty</p> -->
-    <div [hidden]="_d.cart.length === 0">
+    <div [hidden]="!_d.cart || _d.user.status === 0">
+    <!-- <div [hidden]="_d.cart.length === 0 || !_d.cart.length"> -->
       <table #tab mat-table [dataSource]="_d.cart" class="mat-elevation-z8 demo-table cart-table" >
     <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table"> -->
 

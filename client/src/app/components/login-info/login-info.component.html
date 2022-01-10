@@ -2,7 +2,8 @@
     <div class="userdata" >
         <p *ngIf="_d.user.status === 2">Your Last Cart:</p>
         <p *ngIf="_d.user.status === 1">Your Last Order:</p>
-        <div *ngIf="_d.user.status >= 0 && _d.user.status < 3">
+        <div *ngIf="_d.user.status > 0 && _d.user.status < 3">
+        <!-- <div *ngIf="_d.user.status >= 0 && _d.user.status < 3"> -->
           <table #maintab mat-table [dataSource]="_d.dataSource" class="cart-table mat-elevation-z8 demo-table">
             <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
               <th mat-header-cell *matHeaderCellDef>
@@ -24,7 +25,7 @@
         <p *ngIf="_d.user.status === 1">{{ _d.lastOrder.total+"₪ at Total"}}</p>
         <p *ngIf="_d.user.status === 1">{{"Ordered at " + _d.lastOrder.ordered_at.replace("T"," ").slice(0,19)}}</p>
         
-        <p *ngIf="_d.user.status === 0">"Welcome to You First Shopping!"</p>
+        <p *ngIf="_d.user.status === 0">Welcome to You First Shopping!</p>
         
     </div>
 

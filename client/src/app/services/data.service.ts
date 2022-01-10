@@ -147,9 +147,9 @@ export class DataService {
             break;
         }      
         this.showMessage("")
-        console.log("maintab is",this.maintab)
+        console.log("userstatus is",this.user.status)
         this.maintab.renderRows()
-        console.log(this.user.status)
+        // console.log(this.user.status)
       } else {     
         const data = await res.json() 
         this.user.status = -99
