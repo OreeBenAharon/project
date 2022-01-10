@@ -22,7 +22,7 @@ router.post("/login", async (req, res) => {
       return res.status(400).send("Username or password are missing")
     }
     try{
-        const user = await myQuery(`SELECT * FROM users WHERE "username" = "${username}"`)
+        const user = await myQuery(`SELECT * FROM users WHERE username = '${username}'`)
         console.log("user is "+JSON.stringify(user))
         if (user.length === 0) {
             return res.status(400).send({msg:"User does not exist"})
@@ -55,7 +55,7 @@ router.post("/login", async (req, res) => {
         city: user[0].city,
         street: user[0].street
       }
-        // בודק אם יש עגלה קיימת למשתמש
+        // checks if there is already a cart
       let cart = []
       let cartDate = ""
       let userStatus = 0
@@ -66,7 +66,7 @@ router.post("/login", async (req, res) => {
       // user already has an open cart
       const allOrders = await myQuery(`SELECT * FROM orders WHERE user_id = ${user[0].id}`)
       if (allOrders.length > 0) {
-        // המשתמש הזמין אי פעם משהו
+        // has the user ever ordered anything
 
         const allCarts = await myQuery (`SELECT * FROM carts WHERE user_id = ${user[0].id}`)
         const cartId = allCarts[allCarts.length-1].id
@@ -109,7 +109,8 @@ router.post("/login", async (req, res) => {
   router.get("/ifusernameexists", async (req,res)=> {
     try{
         const {username} = req.headers
-        let usernames = await myQuery (`SELECT * FROM users WHERE username = "${username}"`)
+        console.log(`SELECT * FROM users WHERE 'username' = '${username}'`)
+        let usernames = await myQuery (`SELECT * FROM users WHERE 'username' = '${username}'`)
         return res.status(200).send(usernames.length > 0)
     } catch (err) {
         console.log(err)
@@ -125,7 +126,7 @@ router.post("/reg", async (req,res)=> {
         }
 
         const encPass = await bcrypt.hash(password, 10)
-        await myQuery (`INSERT INTO users (id, fname, lname, username, password, city, street, admin) VALUES (${id}, "${fname}", "${lname}", "${username}", "${encPass}", "${city}", "${street}", false)`)
+        await myQuery (`INSERT INTO users (id, fname, lname, username, password, city, street, admin) VALUES (${id}, '${fname}', '${lname}', '${username}', '${encPass}', '${city}', '${street}', false)`)
         return res.status(201).send("Registration complete")
         
     }  catch (err) {

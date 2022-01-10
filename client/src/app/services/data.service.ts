@@ -147,7 +147,7 @@ export class DataService {
             break;
         }      
         this.showMessage("")
-        console.log(this.maintab)
+        console.log("maintab is",this.maintab)
         this.maintab.renderRows()
         console.log(this.user.status)
       } else {     
