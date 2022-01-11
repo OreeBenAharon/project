@@ -14,8 +14,8 @@ export class DataService {
   public categories: any[] = []
   public products: Product[] = []
   public itemsToShow:any
-  public cartData: any
-  public cart: any
+  public cartData: any = []
+  public cart: any = []
   public sum: number
   public lastOrder: any = []
   public lastCart: CartProduct[] =[]
@@ -267,7 +267,7 @@ export class DataService {
       });
 
       const data = await res.json()
-      console.log("data are",data);
+      console.log("cart got is",data);
 
       this.cart = data.cart 
     } catch (error) {
