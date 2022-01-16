@@ -56,8 +56,7 @@ create table IF NOT EXISTS orders (
     street varchar(255),
     ordered_at datetime,
     date datetime,
-    street varchar(255),
-    credit_card int,
+    credit_card bigint,
     primary key(id),
 	foreign key (user_id) references users(id)
     );
@@ -77,16 +76,31 @@ VALUES ('Spelt Bread', 1, 24, 'https://bit.ly/37x7io2' )
 ,('Olive Oil Brioche', 3, 25, 'https://bit.ly/2VIRsnY' )
 ,('Dorom Bread', 1, 20, 'https://bit.ly/2Xbl8e2' );
 
+
 --     ALTER TABLE cart_products
  
 -- 	ADD COLUMN user_id int AFTER cart_id ;
 --     ALTER TABLE orders CHANGE ordered_at ordered_at datetime;
 
 -- ALTER TABLE cart_products DROP COLUMN user_id;
+-- ALTER TABLE orders MODIFY user_id;
+-- ALTER TABLE orders MODIFY credit_card bigint;
+
 
 
 SHOW GRANTS;
 GRANT ALL ON defaultdb.* to 'doadmin'@'db-mysql-nyc3-46477-do-user-10481534-0.b.db.ondigitalocean.com';
+
+ALTER USER 'doadmin'@'db-mysql-nyc3-46477-do-user-10481534-0.b.db.ondigitalocean.com' IDENTIFIED WITH mysql_native_password BY 'SJXpXrc9zold99yh';
+
+create user 'someuser'@'db-mysql-nyc3-46477-do-user-10481534-0.b.db.ondigitalocean.com' identified by 'a123456789';
+
+flush privileges;
+
+
+
+
+
 
 
 
