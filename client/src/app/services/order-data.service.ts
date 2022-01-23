@@ -79,8 +79,10 @@ export class OrderDataService {
           body: JSON.stringify({city:this.city, street:this.street, date, card:this.card}),
         });
         const fileName = await res.json()
-        this.filePath = "https://online-shop-bakery.herokuapp.com/receptions/" + fileName.filename
+        // this.filePath = "https://online-shop-bakery.herokuapp.com/receptions/" + fileName.filename
+        this.filePath = "https://online-shop-bakery.herokuapp.com/" + fileName.filename
         // this.filePath = "../receptions/" + fileName.filename
+
     } catch (error) {
       console.log(error);
     }
