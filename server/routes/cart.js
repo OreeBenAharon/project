@@ -35,7 +35,8 @@ router.post("/add", verify, async (req,res)=> {
         return res.status(403).send("Wrong identity")
     }
     try{
-        const {id,status} = req.user
+        const {id} = req.user
+
         const {productId,amount} = req.body
         if (!id || !amount) {
             return res.status(400).send("Info from user is missing.")
@@ -43,7 +44,7 @@ router.post("/add", verify, async (req,res)=> {
         const existingCart = await myQuery (`SELECT * FROM carts WHERE user_id = ${id}`)
         console.log("existingCart is", existingCart)
 
-          // checks if user already had any cart, status > 0?
+          // checks if user already had any cart
 
         if (existingCart.length > 0) {
 
@@ -63,7 +64,9 @@ router.post("/add", verify, async (req,res)=> {
 
             // checks cart if still active, which means it still has not been ordered
 
-            if (orderedCart.length === 0) {
+            if (orderedCart.length === 0 
+                // && existingCart.length > 0
+                ) {
 
             // checks if product already in user's cart, in order not adding it twice
 
@@ -82,7 +85,8 @@ router.post("/add", verify, async (req,res)=> {
                 return res.status(201).send({cart})
                 }
             }
-        } else { 
+        } 
+        // else { 
 
             //  if user don't have a cart at all, or never had a cart. Creates cart
 
@@ -95,7 +99,7 @@ router.post("/add", verify, async (req,res)=> {
             const cart = await myQuery (`SELECT * FROM cart_products INNER JOIN products ON cart_products.product_id = products.id WHERE cart_id = ${cartId}`)
             console.log("product added cart not exist",cart)
             return res.status(201).send({cart})
-        }
+        // }
     } catch (err) {
         console.log(err)
         return res.status(500).send(err);
